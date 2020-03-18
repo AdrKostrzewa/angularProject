@@ -20,10 +20,10 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2).select()
                 .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
                 .paths(PathSelectors.any())
-                .build().apiInfo(this.apiEndPointInfo());
+                .build().apiInfo(apiEndPointsInfo());
     }
 
-    private ApiInfo apiEndPointInfo() {
+    private ApiInfo apiEndPointsInfo() {
         return new ApiInfoBuilder().title("Spring Boot REST API").build();
     }
 }
